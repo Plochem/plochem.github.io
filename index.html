@@ -5,11 +5,12 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/baffle@0.3.6/dist/baffle.min.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" crossorigin="anonymous">
         <link href="style.css" rel="stylesheet">
     </head>
-    <!-- https://www.thetouchagency.co.uk/branding/ -->
-    <body data-theme='light'>
+    
+    <body data-theme='dark'>
         <div class="container-fluid fullHeight">
             <div class="row fullHeight">
                 <div class="col d-flex flex-column align-items-center from-left-animation">
@@ -44,21 +45,36 @@
                     </div>                    
                 </div>
                 <div class="col-9 fullHeight">
-                    <div class="row intro">
-                        <div class="col-6">
-                            <p>
-                                Hello!
-                                Lorem ipsum dolor sit amet, consect
-                            </p>
+                        <div class="d-flex align-items-center justify-content-center fullHeight">
+                            <div class="col-6">
+                                <div class="intro-sec">
+                                    <p class="hi-text">
+                                        <span class="intro-1">H</span>
+                                        <span class="intro-2">e</span>
+                                        <span class="intro-3">l</span>
+                                        <span class="intro-4">l</span>
+                                        <span class="intro-5">o</span>
+                                        <span class="intro-6">!</span>
+                                    </p>
+                                    <br>
+                                    <p class="intro">
+                                        I'm Ryan Chu, a student at Purdue University studying computer science and data science.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center justify-content-center fullHeight">
+                                    <div class="img-container">                                
+                                        <img src="yes2.png" class="intro-img">
+                                        <div class="overlay"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-6">
-                            <img src="yes2.png">
-                            <img src="miyako.gif">
-                        </div>
-                    </div>
+                    
+                    <div class="row fullHeight">
 
                     <div id="cards_landscape_wrap-2">
-                        <div class="row">
                             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                 <a href="">
                                     <div class="card-flyer">
@@ -176,7 +192,13 @@
         // now this script can find and listen for clicks on the control
         document
             .querySelector('#theme-toggle')
-            .addEventListener('click', onClick)
+            .addEventListener('click', onClick);
+        
+        for (let i = 1; i <= 6; i++) {
+            window.baffle('.intro-'+i).start().reveal(0, 100*i);
+        }
+
+
         }
     </script>
 </html>
